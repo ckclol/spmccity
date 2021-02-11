@@ -5,13 +5,11 @@ import net.jitse.npclib.NPCLib;
 import net.jitse.npclib.api.NPC;
 import net.jitse.npclib.api.events.NPCInteractEvent;
 import net.jitse.npclib.api.skin.MineSkinFetcher;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-
 import java.util.Arrays;
 
 public class TPToCity implements Listener {
@@ -28,7 +26,7 @@ public class TPToCity implements Listener {
         int skinId = 287653549;
         MineSkinFetcher.fetchSkinFromIdAsync(skinId, skin ->{
             TpToCity = npclib.createNPC(Arrays.asList(ChatColor.GOLD + "" + ChatColor.BOLD + "City", ChatColor.GREEN + "Click To Join!"));
-            TpToCity.setLocation(new Location(Bukkit.getWorlds().get(0), 0 ,0 ,0 ,0 ,0));
+            TpToCity.setLocation(new Location(TpToCity.getWorld(), 10, 10, 10));
             TpToCity.setSkin(skin);
             TpToCity.create();
         });
