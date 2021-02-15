@@ -2,4 +2,5 @@ name: SpiritualCity
 version: ${project.version}
 main: city.spmc.SpiritualCity
 api-version: 1.16
-depend: [Holograms]
+depend: [PlaceholderAPI]
+softdepend: [PlaceholderAPI]
