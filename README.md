@@ -28,7 +28,7 @@ Do the same but put the class at city/spmc/items
 # IMPORTANT 2
 In the class next to the item name put extends ItemCreator and click on error to get the super thing and the stuff
 
-` public class SpecialBedrock extends ItemCreator {
+`public class SpecialBedrock extends ItemCreator {
     public SpecialBedrock(int id, RarityMain rarity, String name_of_item, Material m, List ability) {
         super(id, rarity, name_of_item, m, ability);
     }
