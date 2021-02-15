@@ -11,6 +11,7 @@ Call it the item you want (space is replaced with _ )
 # IMPORTANT!
 In the class, next to Your item name, put extends (NoLore or lore) VanillaItemCreator or NoLoreVanillaItemCReator (no lore mean no the thing below item name or description)
 like this
+
 `public class Stick extends NoLoreVanillaItemCreator {
     public Stick(RarityMain rarity, Material m) {
         super(rarity, m);
@@ -26,6 +27,7 @@ type noloreor vanillaitem depends
 Do the same but put the class at city/spmc/items
 # IMPORTANT 2
 In the class next to the item name put extends ItemCreator and click on error to get the super thing and the stuff
+
 ` public class SpecialBedrock extends ItemCreator {
     public SpecialBedrock(int id, RarityMain rarity, String name_of_item, Material m, List ability) {
         super(id, rarity, name_of_item, m, ability);
@@ -79,6 +81,7 @@ In the class next to the item name put extends ItemCreator and click on error to
 `
 And do the same thing (put in spiritualcity)
 but put it here
+
 `   public void registerItems() {
       putItem("name", new SClass(id, RarityMain.EAGLE, Material.BEDROCK, Arrays.asList("first lore", "second lore", "add more")));
     }`
