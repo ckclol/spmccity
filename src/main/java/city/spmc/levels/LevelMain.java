@@ -1,6 +1,6 @@
 package city.spmc.levels;
 
-public enum class Level {
+public enum LevelMain {
     NORMAL,
     MUTATED,
     HARDCORE,
@@ -9,7 +9,7 @@ public enum class Level {
     LEGENDARY,
     GODLY,
     HEAVENLY,
-    CKC;
+    CKC
     //normal for less then 200 hearts, white
     //mutated for less then 1k hearts, red
     //hardcore for less then 10k hearts, dark red

@@ -17,15 +17,12 @@ import java.util.List;
 public abstract class ItemCreator {
     private int id;
     private RarityMain rarity;
-    private String name_of_item;
-    private List<String> lore;
     private Material m;
     private List<String> ability = new ArrayList();
-    public ItemCreator(int id, RarityMain rarity, String name_of_item, Material m, List ability) {
+    public ItemCreator(int id, RarityMain rarity, Material m, List<String> ability) {
         this.id = id;
         this.rarity = rarity;
         this.m = m;
-        this.name_of_item = name_of_item;
         this.ability = ability;
     }
     public void getLore(ItemStack item) {
@@ -60,10 +57,4 @@ public abstract class ItemCreator {
     public RarityMain getRarity() {
         return this.rarity;
     }
-
-    public String getName() {
-        return this.name_of_item;
-    }
-
-
 }

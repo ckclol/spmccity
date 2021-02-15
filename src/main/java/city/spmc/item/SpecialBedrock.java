@@ -13,8 +13,9 @@ import org.bukkit.inventory.ItemStack;
 import java.util.List;
 
 public class SpecialBedrock extends ItemCreator {
-    public SpecialBedrock(int id, RarityMain rarity, String name_of_item, Material m, List ability) {
-        super(id, rarity, name_of_item, m, ability);
+
+    public SpecialBedrock(int id, RarityMain rarity, Material m, List<String> ability) {
+        super(id, rarity, m, ability);
     }
 
     @Override
