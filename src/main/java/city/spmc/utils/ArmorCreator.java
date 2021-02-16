@@ -14,15 +14,19 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ItemCreator {
+public abstract class ArmorCreator {
     private int id;
     private RarityMain rarity;
     private Material m;
+    private int def;
+    private int mana;
     private List<String> ability = new ArrayList();
-    public ItemCreator(int id, RarityMain rarity, Material m, List<String> ability) {
+    public ArmorCreator(int id, RarityMain rarity, Material m, int mana, int def, List<String> ability) {
         this.id = id;
         this.rarity = rarity;
         this.m = m;
+        this.mana = mana;
+        this. def = def;
         this.ability = ability;
     }
     public void getLore(ItemStack item) {
@@ -32,26 +36,9 @@ public abstract class ItemCreator {
             lore.add(ChatColor.BLUE + "Report the item if there is bugs.");
         }
     }
-    public abstract void leftClickAirAction(Player var1, ItemStack var2);
+    public abstract void fullArmorBuff(Player var1);
 
-    public abstract void leftClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
-
-    public abstract void rightClickAirAction(Player var1, ItemStack var2);
-
-    public abstract void rightClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
-
-    public abstract void shiftLeftClickAirAction(Player var1, ItemStack var2);
-
-    public abstract void shiftLeftClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
-
-    public abstract void shiftRightClickAirAction(Player var1, ItemStack var2);
-
-    public abstract void shiftRightClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
-
-    public abstract void hitEntityAction(Player var1, EntityDamageByEntityEvent var2, Entity var3, ItemStack var4);
-
-    public abstract void inInventory(Player var1, ItemStack var2);
-
+    public abstract void armorBuff(Player var1);
     public int getID() {
         return this.id;
     }
