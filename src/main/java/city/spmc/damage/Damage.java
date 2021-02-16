@@ -12,15 +12,25 @@ import org.bukkit.plugin.Plugin;
 
 public class Damage implements Listener {
     @EventHandler
-    public void damage(EntityDamageEvent ev) {
+    public void de(EntityDamageEvent ev) {
         Player p = (Player) ev.getEntity();
+        ItemStack item = p.getInventory().getItemInMainHand();
+        PersistentDataContainer itemdata = item.getPersistentDataContainer();
         PersistentDataContainer data = p.getPersistentDataContainer();
+        NamespacedKey damage = new NamespacedKey((Plugin) this, "damage");
         NamespacedKey strength = new NamespacedKey((Plugin) this, "strength");
-        int strengthd = data.get(strength, PersistentDataType.INTEGER);
-        int dam2 = (int) ev.getDamage();
-        ev.setDamage(dam2 + strengthd);
-        if (p.getInventory().getItemInMainHand().getType() == Material.DIAMOND_SWORD) {
-            dam2 = 50;
+        if (data.get(strength, PresistentDataType.INTEGER) + itemdata.get(strength, PersistentDataType.INTEGER) == null) {
+             int strength2 = 0;
         }
+        else {
+             int dam = data.get(strength, PresistentDataType.INTEGER) + itemdata.get(strength, damage, PersistentDataType.INTEGER);
+        }
+        if (data.get(damage, PresistentDataType.INTEGER) + itemdata.get(damage, PersistentDataType.INTEGER) == null) {
+             int dam = (int) ev.getDamage();
+        }
+        else {
+             int dam = data.get(damage, PresistentDataType.INTEGER) + itemdata.get(damage, PersistentDataType.INTEGER);
+        }
+        ev.setDamage(dam + strength2);
     }
 }
