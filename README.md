@@ -17,12 +17,15 @@ like this
         super(rarity, m);
     }
 }`
+
 Click on the error and get the super thing.
 Then go to SpiritualCity.java, 
 type noloreor vanillaitem depends
+
 ` public void registerVanillaItems() {
         putVanillaItem(new Barrier(RarityMain.ELITE, Material.BARRIER, Arrays.asList("get gone in 10 secs"))); // for lore items
         putNoLore(new Stick(RarityMain.COMMON, Material.STICK)); // no lore items`
+        
 # CustomItems:
 Do the same but put the class at city/spmc/items
 # IMPORTANT 2
