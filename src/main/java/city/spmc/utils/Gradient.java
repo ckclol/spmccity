@@ -1,7 +1,7 @@
 package city.spmc.utils;
 
 public class Gradient {
-   public void createGradient(String hex, String hex2, int steps) {
+   public void createGradient(String text, String hex, String hex2, int steps) {
       int[] rgb1 = Color.decode(hex);
       int red = rgb1[0];
       int green = rgb1[1];
@@ -16,11 +16,20 @@ public class Gradient {
       int cr = red;
       int cg = green;
       int cb = blue;
+      char[] chars = text.toCharArray();
+      StringBuilder sb = new StringBuilder();
       for (i = 0; i < steps; i++) {
          int rr = cr += rsa;
          int gr = cg += gsa;
          int br = cb += bsa;
          System.out.println(rr, gr, br);
+         String redr = String.format("%02X", rr);
+         String grer = String.format("%02X", gr);
+         String blur = String.format("%02X", br);
+         sb.append("#"+redr+grer+blur+chars[i]);
         }
+      sb.append("#"+String.format("%02X", red2)+String.format("%02X", green2)+String.format("%02X", blue2)+chars[chars.length-1]);
+      String result = sb.toString();
+      return ChatEventListener.translateAlternateColorCodes(result);
     }
 }
