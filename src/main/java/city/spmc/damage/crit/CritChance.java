@@ -1,6 +1,9 @@
 package city.spmc.damage.crit;
 
 public class CritChance {
+  @EventHandler
+  public void addcrit(EntityDamageEvent ev) {
+  Player p = (Player) ev.getEntity(); 
   ItemStack item = p.getInventory().getItemInMainHand();
   PersistentDataContainer itemdata = item.getPersistentDataContainer();
   PersistentDataContainer data = p.getPersistentDataContainer(); 
@@ -10,9 +13,6 @@ public class CritChance {
   int totalcrit = basecrit + itemcrit;
   int i = math.random(1, 100);
   if (i>0 && i<totalcrit) {
-     @EventHandler
-     public void addcrit(EntityDamageEvent ev) {
-      Player p = (Player) ev.getEntity();
       int damage = ev.getDamage();
       ev.setDamage(damage + crit);
      } 
