@@ -1,0 +1,64 @@
+package city.spmc.utils;
+
+import city.spmc.rarity.RarityMain;
+
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class WeaponCreator {
+    private int id;
+    private RarityMain rarity;
+    private Material m;
+    private int Damage;
+    private int Strength;
+    private List<String> ability = new ArrayList();
+    public WeaponCreator(int id, RarityMain rarity, Material m, int Damage, int Strength, List<String> ability) {
+        this.id = id;
+        this.rarity = rarity;
+        this.m = m;
+        this.Damage = Damage;
+        this.Strength = Strength
+        this.ability = ability;
+    }
+    public void getLore(ItemStack item) {
+        List<String> lore = new ArrayList();
+        if (this.rarity == RarityMain.RARE) {
+            lore.add(ChatColor.BLUE + "This weapon is glitched / unfinished / new");
+            lore.add(ChatColor.BLUE + "Report the item if there is bugs.");
+        }
+    }
+    public abstract void leftClickAirAction(Player var1, ItemStack var2);
+
+    public abstract void leftClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
+
+    public abstract void rightClickAirAction(Player var1, ItemStack var2);
+
+    public abstract void rightClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
+
+    public abstract void shiftLeftClickAirAction(Player var1, ItemStack var2);
+
+    public abstract void shiftLeftClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
+
+    public abstract void shiftRightClickAirAction(Player var1, ItemStack var2);
+
+    public abstract void shiftRightClickBlockAction(Player var1, PlayerInteractEvent var2, Block var3, ItemStack var4);
+
+    public abstract void hitEntityAction(Player var1, EntityDamageByEntityEvent var2, Entity var3, ItemStack var4);
+
+    public int getID() {
+        return this.id;
+    }
+
+    public RarityMain getRarity() {
+        return this.rarity;
+    }
+}
