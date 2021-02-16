@@ -50,6 +50,8 @@ public abstract class ItemCreator {
 
     public abstract void hitEntityAction(Player var1, EntityDamageByEntityEvent var2, Entity var3, ItemStack var4);
 
+    public abstract void inInventory(Player var1, ItemStack var2);
+
     public int getID() {
         return this.id;
     }
