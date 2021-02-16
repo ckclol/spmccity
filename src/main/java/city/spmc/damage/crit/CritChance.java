@@ -6,8 +6,15 @@ public class CritChance {
   PersistentDataContainer data = p.getPersistentDataContainer(); 
   NamespacedKey e = new NamespacedKey((Plugin) this, "critchance");
   int basecrit = data.get(e, PersistentDataType.INTEGER);
+  int itemcrit = itemdata.get(e, PersistentDataType.INTEGER);
+  int totalcrit = basecrit + itemcrit;
   int i = math.random(1, 100);
-  if (i>0 && i<25) {
-     // insert crit chance
+  if (i>0 && i<totalcrit) {
+     @EventHandler
+     public void addcrit(EntityDamageEvent ev) {
+      Player p = (Player) ev.getEntity();
+      int damage = ev.getDamage();
+      ev.setDamage(damage + crit);
+     } 
   }
 }
