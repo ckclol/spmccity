@@ -3,38 +3,31 @@ package city.spmc.rarity;
 import org.bukkit.ChatColor;
 import city.spmc.utils.Gradient;
 
-public enum RarityMain {
-    BANNED(ChatColor.WHITE),
-    EAGLE(ChatColor.WHITE),
-    COMMON(ChatColor.WHITE),
-    UNCOMMON(ChatColor.GREEN),
-    RARE(ChatColor.DARK_GREEN),
-    EPIC(ChatColor.LIGHT_PURPLE),
-    ELITE(ChatColor.GOLD),
-    LEGENDARY(ChatColor.DARK_PURPLE),
-    GALAXY(Gradient.multiRgbGradient("GALAXY", {Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.AQUA, Color.BLUE, Color.PURPLE}, 7, main::linear);
-    MYTHIC(ChatColor.LIGHT_PURPLE),
-    GODLY(ChatColor.GOLD),
-    SKYLY(ChatColor.AQUA),
-    OCEAN(Gradient,rgbGradient("OCEAN", ocean1, ocean2, main::linear),
-    ADMIN(ChatColor.RED);
+import java.awt.*;
 
-    private ChatColor color;
-    private Gradient gradient;
-    private RarityMain(ChatColor color) {
-        this.color = color;
-    }
-    private RarityMain(Gradient gradient) {
+public enum RarityMain {
+    EAGLE(Gradient.rgbGradient("EAGLE", new Color(35, 140, 145), new Color(115, 154, 156))),
+    COMMON(Gradient.rgbGradient("COMMON", new Color(255, 255, 255), new Color(255, 255, 255))),
+    UNCOMMON(Gradient.rgbGradient("UNCOMMON", new Color(54, 191, 36), new Color(90, 117, 87))),
+    RARE(Gradient.rgbGradient("RARE", new Color(15, 28, 171), new Color(86, 93, 168))),
+    EPIC(Gradient.rgbGradient("EPIC", new Color(81, 28, 145), new Color(101, 11, 212))),
+    ELITE(Gradient.rgbGradient("ELITE", new Color(136, 138, 51), new Color(99, 138, 28))),
+    LEGENDARY(Gradient.rgbGradient("LEGENDARY", new Color(148, 48, 171), new Color(119, 61, 133))),
+    GALAXY(Gradient.multiRgbGradient("GALAXY", new Color[]{Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.BLUE, Color.PINK}, null)),
+    MYTHIC(Gradient.rgbGradient("MYTHIC", new Color(190,	56,	243), new Color(53, 41, 189))),
+    GODLY(Gradient.rgbGradient("GODLY", new Color(251, 176, 52), new Color(255, 221, 0))),
+    SKYLY(Gradient.rgbGradient("SLYLY", new Color(9, 198, 245), new Color(4, 93, 233))),
+    OCEAN(Gradient.rgbGradient("OCEAN", new Color(9, 198, 245), new Color(4, 93, 233))),
+    ADMIN(Gradient.rgbGradient("ADMIN", new Color(186, 111, 19), new Color(154, 19, 168)));
+
+    private String gradient;
+    private RarityMain(String gradient) {
         this.gradient = gradient;
     }
-    public ChatColor getColor() {
-        return this.color;
-    }
-    public Gradient getGradient() {
+
+    public String getGradient() {
         return this.gradient;
     }
-    public Color ocean1 = new Color(9, 198, 245);
-    public Color ocean2 = new Color(4, 93, 233);
     public boolean isRarerThan(RarityMain rarity) {
         int current = this.getIndex();
         int param = rarity.getIndex();
