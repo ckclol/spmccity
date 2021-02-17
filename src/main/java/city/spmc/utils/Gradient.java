@@ -53,4 +53,29 @@ public class Gradient {
 
     return builder.toString();
 }
+   private String multiRgbGradient(String str, Color[] colors, @Nullable double[] portions, Interpolator interpolator) {
+    final double[] p;
+    if (portions == null) {
+        p = new double[colors.length - 1];
+        Arrays.fill(p, 1 / (double) p.length);
+    } else {
+        p = portions;
+    }
+
+    Preconditions.checkArgument(colors.length >= 2);
+    Preconditions.checkArgument(p.length == colors.length - 1);
+
+    final StringBuilder builder = new StringBuilder();
+    int strIndex = 0;
+
+    for (int i = 0; i < colors.length - 1; i++) {
+        builder.append(rgbGradient(
+                str.substring(strIndex, strIndex + (int) (p[i] * str.length())),
+                colors[i],
+                colors[i + 1],
+                interpolator));
+        strIndex += p[i] * str.length();
+    }
+    return builder.toString();
+}
 }
