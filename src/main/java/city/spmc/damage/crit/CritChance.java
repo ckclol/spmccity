@@ -25,7 +25,7 @@ public class CritChance {
   int i = (int) ((Math.random() * ((100 - 1) + 1)) + 1);
   if (i>0 && i<totalcrit) {
       int damage = (int) ev.getDamage();
-      ev.setDamage(damage + crit);
+      ev.setDamage(damage + CritDamage.crit);
      } 
   }
 }
