@@ -32,4 +32,25 @@ public class Gradient {
       String result = sb.toString();
       return ChatEventListener.translateAlternateColorCodes(result);
     }
+   private String rgbGradient(String str, Color from, Color to, Interpolator interpolator) {
+
+    // interpolate each component separately 
+    final double[] red = interpolator.interpolate(from.getRed(), to.getRed(), str.length());
+    final double[] green = interpolator.interpolate(from.getGreen(), to.getGreen(), str.length());
+    final double[] blue = interpolator.interpolate(from.getBlue(), to.getBlue(), str.length());
+
+    final StringBuilder builder = new StringBuilder();
+
+    // create a string that matches the input-string but has
+    // the different color applied to each char
+    for (int i = 0; i < str.length(); i++) {
+        builder.append(ChatColor.of(new Color(
+                (int) Math.round(red[i]),
+                (int) Math.round(green[i]),
+                (int) Math.round(blue[i]))))
+                .append(str.charAt(i));
+    }
+
+    return builder.toString();
+}
 }
