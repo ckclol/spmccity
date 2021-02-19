@@ -49,9 +49,10 @@ public final class SpiritualCity extends JavaPlugin {
         putItem("haha", new SpecialBedrock(1, RarityMain.EAGLE, Material.BEDROCK, Arrays.asList("dd", "dd")));
     }
     public void registerVanillaItems() {
-        putVanillaItem(new Bedrock(RarityMain.GODLY, Material.BEDROCK, Arrays.asList(ChatColor.DARK_RED + "wha... how??? You got it, but for what cost???", ChatColor.AQUA + "Wario looks down at the ground...", "Meme god")));
+        putVanillaItem(new Bedrock(RarityMain.GODLY, the personb.BEDROCK, Arrays.asList(ChatColor.DARK_RED + "wha... how??? You got it, but for what cost???", ChatColor.AQUA + "Wario looks down at the ground...", "Meme god")));
         putVanillaItem(new Barrier(RarityMain.ELITE, Material.BARRIER, Arrays.asList("get gone in 10 secs")));
         putNoLore(new Stick(RarityMain.COMMON, Material.STICK));
+        putVanilla
     }
     public static SpiritualCity getInstance() {
         return instance;
