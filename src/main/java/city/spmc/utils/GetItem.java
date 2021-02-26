@@ -10,7 +10,7 @@ import static city.spmc.utils.IsItem.isItem;
 
 public class GetItem {
     public static ItemCreator getItem(ItemStack item) {
-        return !isItem(item) ? null : (ItemCreator) SpiritualCity.items.get(getStringFromItem(item, "uber-name"));
+        return !isItem(item) ? null : SpiritualCity.items.get(getStringFromItem(item, "uber-name"));
     }
 
     public static ItemCreator getItem(String name) {
@@ -24,8 +24,7 @@ public class GetItem {
 
             String key = (String)var1.next();
             creator = (ItemCreator)SpiritualCity.items.get(key);
-        } while(!creator.getName().equals(name));
+        } while(true);
 
-        return creator;
     }
 }

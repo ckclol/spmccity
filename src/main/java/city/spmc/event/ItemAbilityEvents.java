@@ -1,7 +1,7 @@
 package city.spmc.event;
 
-import city.spmc.utils.GetItem;
-import city.spmc.utils.ItemCreator;
+import city.spmc.annoations.Event;
+import city.spmc.utils.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class ItemAbilityEvents implements Listener {
+    @Event(Event = "ItemAbility", lastEdited = "17Feb2021", version = 0.1)
     @EventHandler
     public void onPlayerAbility(PlayerInteractEvent e) {
         Player player = e.getPlayer();

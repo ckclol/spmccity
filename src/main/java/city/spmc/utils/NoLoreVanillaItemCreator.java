@@ -13,8 +13,6 @@ public abstract class NoLoreVanillaItemCreator {
     public String getName() {
         return this.m.name();
     }
-
-
     public void put(String s, NoLoreVanillaItemCreator nolore) {
     }
 }

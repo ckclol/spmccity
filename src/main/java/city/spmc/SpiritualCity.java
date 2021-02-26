@@ -1,7 +1,7 @@
 package city.spmc;
 
 import city.spmc.event.ItemAbilityEvents;
-import city.spmc.item.SpecialBedrock;
+import city.spmc.item.AppleBlock;
 import city.spmc.levels.LevelHandler;
 import city.spmc.rarity.RarityMain;
 import city.spmc.utils.ItemCreator;
@@ -17,13 +17,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public final class SpiritualCity extends JavaPlugin {
     private static SpiritualCity instance;
     public static Map<String, ItemCreator> items = new HashMap();
     public static Map<String, VanillaItemCreator> vanillaitems = new HashMap();
+    public static String prefix = "&8&l[&5&lUberItems&8&l] &8&l";
 
     @Override
     public void onEnable() {
@@ -46,7 +46,7 @@ public final class SpiritualCity extends JavaPlugin {
         pm.registerEvents(new LevelHandler(), this);
     }
     public void registerItems() {
-        putItem("haha", new SpecialBedrock(1, RarityMain.EAGLE, Material.BEDROCK, Arrays.asList("dd", "dd")));
+        putItem("Apple Block", new AppleBlock(2, "Apple Block", RarityMain.GALAXY, Material.REDSTONE_BLOCK, 1, 1, 0, 0, null));
     }
     public void registerVanillaItems() {
         putVanillaItem(new Bedrock(RarityMain.GODLY, Material.BEDROCK, Arrays.asList(ChatColor.DARK_RED + "wha... how??? You got it, but for what cost???", ChatColor.AQUA + "Wario looks down at the ground...", "Meme god")));

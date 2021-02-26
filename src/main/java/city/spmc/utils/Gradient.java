@@ -1,16 +1,15 @@
 package city.spmc.utils;
 
 import com.google.common.base.Preconditions;
-import com.sun.istack.internal.Nullable;
 import javafx.animation.Interpolator;
 import net.md_5.bungee.api.ChatColor;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
 import java.util.Arrays;
 
 public class Gradient {
-   public static String rgbGradient(String str, Color from, Color to) {
-    Interpolator interpolator = Interpolator.LINEAR;
+   public static String rgbGradient(String str, Color from, Color to, Interpolator interpolator) {
     final double red = interpolator.interpolate(from.getRed(), to.getRed(), str.length());
     final double green = interpolator.interpolate(from.getGreen(), to.getGreen(), str.length());
     final double blue = interpolator.interpolate(from.getBlue(), to.getBlue(), str.length());
@@ -24,7 +23,7 @@ public class Gradient {
 
     return builder.toString();
 }
-   public static String multiRgbGradient(String str, Color[] colors, @Nullable double[] portions) {
+   public static String multiRgbGradient(String str, Color[] colors, @Nullable double[] portions, Interpolator interpolator) {
     final double[] p;
     if (portions == null) {
         p = new double[colors.length - 1];
@@ -40,8 +39,7 @@ public class Gradient {
     int strIndex = 0;
 
     for (int i = 0; i < colors.length - 1; i++) {
-        builder.append(rgbGradient(
-                str.substring(strIndex, strIndex + (int) (p[i] * str.length())), colors[i], colors[i + 1]));
+        builder.append(rgbGradient(str.substring(strIndex, strIndex + (int) (p[i] * str.length())), colors[i], colors[i + 1], Interpolator.LINEAR));
         strIndex += p[i] * str.length();
     }
     return builder.toString();

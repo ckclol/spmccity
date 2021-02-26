@@ -1,5 +1,6 @@
 package city.spmc.utils;
 
+import city.spmc.SpiritualCity;
 import city.spmc.rarity.RarityMain;
 
 import org.bukkit.ChatColor;
@@ -18,13 +19,25 @@ public abstract class ItemCreator {
     private int id;
     private RarityMain rarity;
     private Material m;
+    public static int Damage;
+    public static int Strength;
+    private static String name;
     private List<String> ability = new ArrayList();
-    public ItemCreator(int id, RarityMain rarity, Material m, List<String> ability) {
+    public static int mama;
+    public static int def;
+    public ItemCreator(int id, String name, RarityMain rarity, Material m, int Damage, int Strength, int mama, int def, List<String> ability) {
         this.id = id;
         this.rarity = rarity;
         this.m = m;
+        this.Damage = Damage;
+        this.name = name;
+        this.Strength = Strength;
+        this.mama = mama;
+        this.def = def;
         this.ability = ability;
     }
+
+
     public void getLore(ItemStack item) {
         List<String> lore = new ArrayList();
         if (this.rarity == RarityMain.RARE) {
@@ -58,5 +71,12 @@ public abstract class ItemCreator {
 
     public RarityMain getRarity() {
         return this.rarity;
+    }
+
+    public String getName() {
+        return this.m.name();
+    }
+    public static ItemStack fromString(SpiritualCity main, String name, int stackSize) {
+        return null;
     }
 }

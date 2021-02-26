@@ -10,7 +10,7 @@ public class IsItem {
         return getStringFromItem(item, "is-item") != null;
     }
 
-    public static boolean isUber(ItemStack item, int id) {
+    public static boolean isFromCity(ItemStack item, int id) {
         if (!isItem(item)) {
             return false;
         }
