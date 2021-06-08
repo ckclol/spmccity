@@ -18,6 +18,7 @@ public abstract class ItemCreator {
     private int id;
     private RarityMain rarity;
     private Material m;
+    private ItemStack is;
     private static String name;
     private List<String> ability = new ArrayList();
     private List<String> lore = new ArrayList();
@@ -31,6 +32,14 @@ public abstract class ItemCreator {
         this.ability = ability;
     }
 
+    public ItemCreator(int id, String name, RarityMain rarity, ItemStack is, List<String> ability) {
+        this.id = id;
+        this.rarity = rarity;
+        this.is = is;
+        this.name = name;
+        this.ability = ability;
+    }
+
     public ItemCreator(int id, String name, RarityMain rarity, Material m, List<String> ability, List<String> lore) {
         this.id = id;
         this.rarity = rarity;
@@ -40,10 +49,30 @@ public abstract class ItemCreator {
         this.lore = lore;
     }
 
+    public ItemCreator(int id, String name, RarityMain rarity, ItemStack is, List<String> ability, List<String> lore) {
+        this.id = id;
+        this.rarity = rarity;
+        this.is = is;
+        this.name = name;
+        this.ability = ability;
+        this.lore = lore;
+    }
+
     public ItemCreator(int id, String name, RarityMain rarity, Material m, List<String> ability, int damage, int strength, int mana) {
         this.id = id;
         this.rarity = rarity;
         this.m = m;
+        this.name = name;
+        this.ability = ability;
+        this.Damage = damage;
+        this.Strength = strength;
+        this.Mana = mana;
+    }
+
+    public ItemCreator(int id, String name, RarityMain rarity, ItemStack is, List<String> ability, int damage, int strength, int mana) {
+        this.id = id;
+        this.rarity = rarity;
+        this.is = is;
         this.name = name;
         this.ability = ability;
         this.Damage = damage;
@@ -63,10 +92,40 @@ public abstract class ItemCreator {
         this.lore = lore;
     }
 
+    public ItemCreator(int id, String name, RarityMain rarity, ItemStack m, List<String> ability, int damage, int strength, int mana, List<String> lore) {
+        this.id = id;
+        this.rarity = rarity;
+        this.is = m;
+        this.name = name;
+        this.ability = ability;
+        this.Damage = damage;
+        this.Strength = strength;
+        this.Mana = mana;
+        this.lore = lore;
+    }
+
+    public ItemCreator(int id, String name, RarityMain rarity, ItemStack m, int damage, int strength, int mana, List<String> lore) {
+        this.id = id;
+        this.rarity = rarity;
+        this.is = m;
+        this.name = name;
+        this.Damage = damage;
+        this.Strength = strength;
+        this.Mana = mana;
+        this.lore = lore;
+    }
+
     public ItemCreator(int id, String name, RarityMain rarity, Material m) {
         this.id = id;
         this.rarity = rarity;
         this.m = m;
+        this.name = name;
+    }
+
+    public ItemCreator(int id, String name, RarityMain rarity, ItemStack m) {
+        this.id = id;
+        this.rarity = rarity;
+        this.is = m;
         this.name = name;
     }
 

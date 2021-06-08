@@ -19,18 +19,6 @@ public class ItemMain implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            if ("give".equals(args)) {
-                Player p = (Player) sender;
-                int stack = 1;
-                if (args.length > 2) {
-                    stack = Integer.parseInt(args[2]);
-                }
-                ItemStack item = ItemCreator.fromString(this.main, args[1], stack);
-                p.getInventory().addItem(new ItemStack[]{item});
-                p.sendMessage(RiseCity.prefix + "Given " + item.getItemMeta().getDisplayName());
-            }
-        }
         return true;
     }
 }
