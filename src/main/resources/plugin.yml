@@ -1,6 +1,6 @@
 name: SpiritualCity
 version: ${project.version}
-main: city.spmc.SpiritualCity
+main: rise.city.RiseCity
 api-version: 1.16
 depend: [PlaceholderAPI]
 softdepend: [PlaceholderAPI]
