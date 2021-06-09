@@ -7,10 +7,10 @@ Here is how to edit the code...
 # VanillaItems:
 Get eclipse or a java coding program.
 Download and edit my code.
-Make a new class in city/spmc/utils/vanillaitems
+Make a new class in city/spmc/item
 Call it the item you want (space is replaced with _ )
 # IMPORTANT!
-In the class, next to Your item name, put extends (NoLore or lore) VanillaItemCreator or NoLoreVanillaItemCReator (no lore mean no the thing below item name or description)
+In the class, next to Your item name, put extends ItemCreator
 like this
  
 `public class Stick extends NoLoreVanillaItemCreator {
