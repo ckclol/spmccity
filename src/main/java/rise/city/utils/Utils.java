@@ -2,11 +2,20 @@ package rise.city.utils;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import rise.city.rarity.RarityMain;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 public class Utils {
@@ -27,34 +36,65 @@ public class Utils {
         skull.setItemMeta(meta);
         return skull;
     }
-    
+
+    public static String convertRarity(RarityMain r) {
+        String r2;
+        switch (r) {
+            case EAGLE:
+                r2 = RarityMain.getGradient(RarityMain.EAGLE);
+                break;
+            case COMMON:
+                r2 = RarityMain.getGradient(RarityMain.COMMON);
+                break;
+            case UNCOMMON:
+                r2 = RarityMain.getGradient(RarityMain.UNCOMMON);
+                break;
+            case RARE:
+                r2 = RarityMain.getGradient(RarityMain.RARE);
+                break;
+            case EPIC:
+                r2 = RarityMain.getGradient(RarityMain.EPIC);
+                break;
+            case ELITE:
+                r2 = RarityMain.getGradient(RarityMain.ELITE);
+                break;
+            case LEGENDARY:
+                r2 = RarityMain.getGradient(RarityMain.LEGENDARY);
+                break;
+            case GALAXY:
+                r2 = RarityMain.getGradient(RarityMain.GALAXY);
+                break;
+            case MYTHIC:
+                r2 = RarityMain.getGradient(RarityMain.MYTHIC);
+                break;
+            case GODLY:
+                r2 = RarityMain.getGradient(RarityMain.GODLY);
+                break;
+            case SKYLY:
+                r2 = RarityMain.getGradient(RarityMain.SKYLY);
+                break;
+            case OCEAN:
+                r2 = RarityMain.getGradient(RarityMain.OCEAN);
+                break;
+            case ADMIN:
+                r2 = RarityMain.getGradient(RarityMain.ADMIN);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + r);
+        }
+        return r2;
+    }
+
     public static String setColor(String string) {
       String s2 = ChatColor.translateAlternateColorCodes('&', string);
         return s2;
     }
     
-    public ItemStack createItem(String name, Material mat, ItemStack is, boolean glow, boolean unb, boolean hunb, List<String> lore) {
+    public static ItemStack createMaterialItem(String name, Material mat, boolean glow, boolean unb, boolean hunb, List<String> lore, RarityMain rarity, int damage, int strength, int defence) {
       ItemStack returned;
-      if (is!=null && mat=null) {
-        returned = is;
-        ItemMeta meta = returned.getItemMeta();
-        if (glow) {
-          meta.addEnchant(Enchantment.ARROW_FIRE, 1, true);
-          meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        }
-        if (unb) {
-          meta.setUnbreakable(true);
-        }
-        if (hunb) {
-          meta.addItemFlags(ItemFlag.HIDE_UNBREAKBLE);
-        }
-        if (lore != null) {
-          meta.setLore(lore);
-        }
-      returned.setItemMeta(meta);
-      } else if (is=null && mat!=null){
         returned = new ItemStack(mat, 1);
         ItemMeta meta = returned.getItemMeta();
+          meta.setDisplayName(setColor(name));
         if (glow) {
           meta.addEnchant(Enchantment.ARROW_FIRE, 1, true);
           meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -63,15 +103,46 @@ public class Utils {
           meta.setUnbreakable(true);
         }
         if (hunb) {
-          meta.addItemFlags(ItemFlag.HIDE_UNBREAKBLE);
+          meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         }
         if (lore != null) {
-          meta.setLore(lore);
+            List<String> l2 = null;
+            for (String ab : lore) {
+                l2 = Arrays.asList(convertRarity(rarity), ab);
+            }
+            meta.setLore(l2);
         }
+        meta.addAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS, new AttributeModifier("generic.armor_toughness", defence, AttributeModifier.Operation.ADD_NUMBER));
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier("generic.attack_damage", damage + strength, AttributeModifier.Operation.ADD_NUMBER));
       returned.setItemMeta(meta);
-      } else {    
-        returned = null;
-      }
+        return returned;
+    }
+
+    public static ItemStack createItemStackItem(String name, ItemStack is, boolean glow, boolean unb, boolean hunb, List<String> lore, RarityMain rarity, int damage, int strength, int defence) {
+        ItemStack returned;
+            returned = is;
+            ItemMeta meta = returned.getItemMeta();
+            meta.setDisplayName(setColor(name));
+            if (glow) {
+                meta.addEnchant(Enchantment.ARROW_FIRE, 1, true);
+                meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            }
+            if (unb) {
+                meta.setUnbreakable(true);
+            }
+            if (hunb) {
+                meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+            }
+            if (lore != null) {
+                List<String> l2 = null;
+                for (String ab : lore) {
+                    l2 = Arrays.asList(convertRarity(rarity), ab);
+                }
+                meta.setLore(l2);
+            }
+        meta.addAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS, new AttributeModifier("generic.armor_toughness", defence, AttributeModifier.Operation.ADD_NUMBER));
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier("generic.attack_damage", damage + strength, AttributeModifier.Operation.ADD_NUMBER));
+            returned.setItemMeta(meta);
         return returned;
     }
 

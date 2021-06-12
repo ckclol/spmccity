@@ -1,18 +1,16 @@
 package rise.city;
 
-import org.bukkit.entity.EntityType;
-import rise.city.item.*;
+import rise.city.damage.Damage;
+import rise.city.damage.HoloDamage;
+import rise.city.damage.crit.CritChance;
+import rise.city.damage.crit.CritDamage;
+import rise.city.damage.crit.HoloCritDamage;
+import rise.city.enchants.setGlowing;
+import rise.city.healthbar.HealthbarHandler;
 import rise.city.levels.*;
-import rise.city.mob.*;
-import rise.city.rarity.*;
-import rise.city.utils.*;
-import org.bukkit.Material;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import rise.city.test.DamageTester;
 
 public final class RiseCity extends JavaPlugin {
 
@@ -33,6 +31,12 @@ public final class RiseCity extends JavaPlugin {
     public void registerEvents() {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new LevelHandler(), this);
+        pm.registerEvents(new DamageTester(), this);
+        pm.registerEvents(new HoloDamage(), this);
+        pm.registerEvents(new Damage(), this);
+        pm.registerEvents(new LevelHandler(), this);
+        pm.registerEvents(new HealthbarHandler(), this);
+        pm.registerEvents(new setGlowing(), this);
     }
     public void registerRecipes() {
     }

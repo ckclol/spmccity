@@ -21,33 +21,11 @@ public enum RarityMain {
     ADMIN(Gradient.rgbGradient("ADMIN", new Color(186, 111, 19), new Color(154, 19, 168), Interpolator.LINEAR));
 
     private String gradient;
-    private RarityMain(String gradient) {
+    RarityMain(String gradient) {
         this.gradient = gradient;
     }
 
-    public String getGradient() {
-        return this.gradient;
-    }
-    public boolean isRarerThan(RarityMain rarity) {
-        int current = this.getIndex();
-        int param = rarity.getIndex();
-        return current > param;
-    }
-
-    public int getIndex() {
-        int index = 0;
-        RarityMain[] var2 = values();
-        int var3 = var2.length;
-
-        for(int var4 = 0; var4 < var3; ++var4) {
-            RarityMain rarity = var2[var4];
-            if (this.equals(rarity)) {
-                return index;
-            }
-
-            ++index;
-        }
-
-        return -1;
+    public static String getGradient(RarityMain r) {
+        return r.gradient;
     }
 }
