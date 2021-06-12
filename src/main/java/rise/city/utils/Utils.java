@@ -27,6 +27,10 @@ public class Utils {
         skull.setItemMeta(meta);
         return skull;
     }
-
+    
+    public static String setColor(String string) {
+      String s2 = ChatColor.translateAlternateColorCodes('&', string);
+        return s2;
+    }
 
 }
