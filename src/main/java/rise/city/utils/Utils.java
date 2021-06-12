@@ -32,5 +32,47 @@ public class Utils {
       String s2 = ChatColor.translateAlternateColorCodes('&', string);
         return s2;
     }
+    
+    public ItemStack createItem(String name, Material mat, ItemStack is, boolean glow, boolean unb, boolean hunb, List<String> lore) {
+      ItemStack returned;
+      if (is!=null && mat=null) {
+        returned = is;
+        ItemMeta meta = returned.getItemMeta();
+        if (glow) {
+          meta.addEnchant(Enchantment.ARROW_FIRE, 1, true);
+          meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        }
+        if (unb) {
+          meta.setUnbreakable(true);
+        }
+        if (hunb) {
+          meta.addItemFlags(ItemFlag.HIDE_UNBREAKBLE);
+        }
+        if (lore != null) {
+          meta.setLore(lore);
+        }
+      returned.setItemMeta(meta);
+      } else if (is=null && mat!=null){
+        returned = new ItemStack(mat, 1);
+        ItemMeta meta = returned.getItemMeta();
+        if (glow) {
+          meta.addEnchant(Enchantment.ARROW_FIRE, 1, true);
+          meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        }
+        if (unb) {
+          meta.setUnbreakable(true);
+        }
+        if (hunb) {
+          meta.addItemFlags(ItemFlag.HIDE_UNBREAKBLE);
+        }
+        if (lore != null) {
+          meta.setLore(lore);
+        }
+      returned.setItemMeta(meta);
+      } else {    
+        returned = null;
+      }
+        return returned;
+    }
 
 }
