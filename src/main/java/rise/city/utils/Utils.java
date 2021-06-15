@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import rise.city.levels.LevelMain;
 import rise.city.rarity.RarityMain;
 
 import java.lang.reflect.Field;
@@ -35,6 +36,34 @@ public class Utils {
         }
         skull.setItemMeta(meta);
         return skull;
+    }
+
+    public static String convertLevel(LevelMain lvl) {
+        String l = new String("null");
+        switch (lvl) {
+            case NORMAL:
+                l = "Level 1 ";
+                break;
+            case MUTATED:
+                l = "Level 25 ";
+                break;
+            case HARDCORE:
+                l = "Level 50 ";
+                break;
+            case EXTREME:
+                l = "Level 69 ";
+                break;
+            case EPIC:
+                l = "Level 200 ";
+                break;
+            case LEGENDARY:
+                l = "Level 6969 ";
+                break;
+            case GODLY:
+                l = "Level 69420 ";
+                break;
+        }
+        return l;
     }
 
     public static String convertRarity(RarityMain r) {

@@ -9,15 +9,25 @@ public enum LevelMain {
     EXTREME(100000, ChatColor.AQUA),
     EPIC(1000000, ChatColor.DARK_PURPLE),
     LEGENDARY(100000000, ChatColor.GOLD),
-    GODLY(1000000000, ChatColor.GRAY),
-    HEAVENLY(64000000000L, ChatColor.LIGHT_PURPLE),
-    CKC(1000000000000L, ChatColor.GREEN);
+    GODLY(1000000000, ChatColor.GRAY);
 
-    private LevelMain(long mh, ChatColor cc) {
+    int mh;
+    ChatColor cc;
 
+    LevelMain(int mh, ChatColor cc) {
+        this.cc = cc;
+        this.mh = mh;
     }
 
-    //normal for less then 200 hearts, white
+    public static int getHealth(LevelMain lvl) {
+        return lvl.mh;
+    }
+
+    public ChatColor getCc(LevelMain lvl) {
+        return lvl.cc;
+    }
+
+//normal for less then 200 hearts, white
     //mutated for less then 1k hearts, red
     //hardcore for less then 10k hearts, dark red
     //extreme for less then 100k hearts, aqua
