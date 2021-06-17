@@ -24,5 +24,7 @@ public class HoloDamage implements Listener {
         armor.setCustomName(ChatColor.GRAY + dam);
         wait(1);
         armor.remove();
+        System.out.println("Damager: " + damager);
+        System.out.println("Damage: " + dam);
     }
 }

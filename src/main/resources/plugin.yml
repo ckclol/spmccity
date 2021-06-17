@@ -2,5 +2,5 @@ name: SpiritualCity
 version: ${project.version}
 main: rise.city.RiseCity
 api-version: 1.16
-depend: [PlaceholderAPI]
-softdepend: [PlaceholderAPI]
+depend: [PlaceholderAPI, Vault]
+softdepend: [PlaceholderAPI, Vault]
