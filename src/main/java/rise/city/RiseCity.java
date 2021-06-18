@@ -5,6 +5,10 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import rise.city.cmd.AuctionCommand;
+import rise.city.cmd.DoubleCoins;
+import rise.city.cmd.TripleCoins;
+import rise.city.cmd.items.ItemMain;
 import rise.city.damage.Damage;
 import rise.city.damage.HoloDamage;
 import rise.city.exp.Exp;
@@ -43,6 +47,10 @@ public final class RiseCity extends JavaPlugin {
         log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), getDescription().getVersion()));
     }
     public void registerCommands() {
+        this.getCommand("dc").setExecutor(new DoubleCoins());
+        this.getCommand("tc").setExecutor(new TripleCoins());
+        this.getCommand("ah").setExecutor(new AuctionCommand());
+        this.getCommand("warp").setExecutor(new ItemMain());
 
     }
     public void registerEvents() {

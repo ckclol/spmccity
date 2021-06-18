@@ -14,8 +14,8 @@ import java.util.UUID;
 
 public class CoinMultipler {
 
-    public boolean DoubleCoins = false;
-    public boolean TripleCoins = false;{
+    public static boolean DoubleCoins = false;
+    public static boolean TripleCoins = false;{
 
         if (DoubleCoins) {
             Scanner s = null;

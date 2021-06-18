@@ -5,10 +5,15 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+@CommandAnno(cmd = "warp", lastEdited = "18Jun2021", version = 0.2)
 public class Warps implements CommandExecutor {
-    @CommandAnno(cmd = "warp", lastEdited = "17Feb2021", version = 0.2)
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        return false;
+        // warp.yml
+        switch(label) {
+            case "a":
+                break;
+        }
+        return true;
     }
 }
