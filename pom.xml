@@ -54,16 +54,41 @@
 
     <repositories>
         <repository>
+            <id>java-net-repo</id>
+            <url>https://maven.java.net/content/repositories/public/</url>
+        </repository>
+        <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
+        <repository>
+            <id>jboss-repo</id>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>spring-repo</id>
+            <url>https://repo.spring.io/release</url>
+        </repository>
+        <repository>
+            <id>sonatype-snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+            <repository>
+                <id>inventive-repo</id>
+                <url>https://repo.inventivetalent.org/content/groups/public/</url>
+            </repository>
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>org.java-websocket</groupId>
+            <artifactId>Java-WebSocket</artifactId>
+            <version>1.5.1</version>
+        </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
@@ -75,6 +100,21 @@
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.JordanOsterberg</groupId>
+            <artifactId>JScoreboards</artifactId>
+            <version>1.0.1-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jely2002</groupId>
+            <artifactId>StandaloneCrazyAdvancementsAPI</artifactId>
+            <version>1.13.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.juliarn</groupId>
+            <artifactId>npc-lib</artifactId>
+            <version>2.5-RELEASE</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,4 +1,4 @@
-package rise.city.cmd.items;
+package rise.city.cmd;
 
 import rise.city.annoations.CommandAnno;
 import org.bukkit.command.Command;
