@@ -30,7 +30,13 @@ public class CustomEnchantment {
 	public void setId(int id) {this.id = id;}
 
 	
-	public void trigger(Event event) {effect.run(event);}
+	public void trigger(Event event) {
+		try {
+			effect.run(event);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public List<CustomEnchantment> getIncompatibleCustomEnchs(){
 		return incompatibleCustomEnchs;
@@ -46,6 +52,6 @@ public class CustomEnchantment {
 	}
 
 	public interface Effect {
-		public void run(Event event);
+		void run(Event event) throws InterruptedException;
 	}
 }
