@@ -54,7 +54,7 @@ public class Utils {
                 l = "Level 69 ";
                 break;
             case EPIC:
-                l = "Level 200 ";
+                l = "Level 420 ";
                 break;
             case LEGENDARY:
                 l = "Level 6969 ";

@@ -1,13 +1,13 @@
 package rise.city.auctionsystem;
 
+import me.kodysimpson.simpapi.menu.AbstractPlayerMenuUtility;
+import me.kodysimpson.simpapi.menu.Menu;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
-import rise.city.utils.Menu;
-import rise.city.utils.PlayerMenuUtility;
 
 public class Auction extends Menu {
 
-    public Auction(PlayerMenuUtility playerMenuUtility) {
+    public Auction(AbstractPlayerMenuUtility playerMenuUtility) {
         super(playerMenuUtility);
     }
 
@@ -19,6 +19,11 @@ public class Auction extends Menu {
     @Override
     public int getSlots() {
         return 54;
+    }
+
+    @Override
+    public boolean cancelAllClicks() {
+        return false;
     }
 
     @Override

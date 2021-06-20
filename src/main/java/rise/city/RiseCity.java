@@ -1,5 +1,6 @@
 package rise.city;
 
+import me.kodysimpson.simpapi.menu.AbstractPlayerMenuUtility;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
@@ -14,17 +15,15 @@ import rise.city.healthbar.HealthbarHandler;
 import rise.city.levels.*;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import rise.city.listener.MenuListener;
 import rise.city.test.DamageTester;
-import rise.city.utils.PlayerMenuUtility;
 
 import java.util.HashMap;
 import java.util.logging.Logger;
 
 public final class RiseCity extends JavaPlugin {
 
-    private static RiseCity plugin;
-    private static final HashMap<Player, PlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
+    private static final RiseCity plugin = new RiseCity();
+    private static final HashMap<Player, AbstractPlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
     private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy econ = null;
     private static Permission perms = null;
@@ -66,7 +65,6 @@ public final class RiseCity extends JavaPlugin {
         pm.registerEvents(new Damage(), this);
         pm.registerEvents(new LevelHandler(), this);
         pm.registerEvents(new HealthbarHandler(), this);
-        pm.registerEvents(new MenuListener(), this);
     }
     public void registerRecipes() {
     }
@@ -101,12 +99,15 @@ public final class RiseCity extends JavaPlugin {
         return perms != null;
     }
 
-    public static PlayerMenuUtility getPlayerMenuUtility(Player p) {
-        PlayerMenuUtility playerMenuUtility;
-        if (!(playerMenuUtilityMap.containsKey(p))) { //See if the player has a playermenuutility "saved" for them
-
-            //This player doesn't. Make one for them add add it to the hashmap
-            playerMenuUtility = new PlayerMenuUtility(p);
+    public static AbstractPlayerMenuUtility getPlayerMenuUtility(Player p) {
+        AbstractPlayerMenuUtility playerMenuUtility;
+        if (!(playerMenuUtilityMap.containsKey(p))) {
+            playerMenuUtility = new AbstractPlayerMenuUtility(p) {
+                @Override
+                public Player getOwner() {
+                    return super.getOwner();
+                }
+            };
             playerMenuUtilityMap.put(p, playerMenuUtility);
 
             return playerMenuUtility;
@@ -135,5 +136,5 @@ public final class RiseCity extends JavaPlugin {
     public static RiseCity getPlugin() {
         return plugin;
     }
-
+    
 }
