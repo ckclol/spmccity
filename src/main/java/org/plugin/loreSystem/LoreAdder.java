@@ -3,6 +3,7 @@ package org.plugin.loreSystem;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.caveandcliff.Implemenation;
 import org.api.CustomEnchantment;
 import org.api.ResponseManager;
 import org.api.TagWrapper;
@@ -57,7 +58,7 @@ public interface LoreAdder {
 		item.setItemMeta(meta);
 
 		if (tagWrapper.getTags(item).isEmpty()) {
-			if (TagManager.getInstance().getImplemenation().getClass() != org.V1_14_R1.Implemenation.class) {
+			if (TagManager.getInstance().getImplemenation().getClass() != Implemenation.class) {
 				if (!item.getEnchantments().isEmpty()) {
 					return item;
 				}

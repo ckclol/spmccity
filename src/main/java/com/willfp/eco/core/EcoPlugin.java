@@ -25,7 +25,6 @@ import com.willfp.eco.internal.integrations.PlaceholderIntegrationPAPI;
 import com.willfp.eco.internal.logging.EcoLogger;
 import com.willfp.eco.internal.scheduling.EcoScheduler;
 import lombok.Getter;
-import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
@@ -208,21 +207,6 @@ public abstract class EcoPlugin extends JavaPlugin {
         this.getLogger().info("Loading " + this.color + this.pluginName);
 
         this.getEventManager().registerListener(new ArrowDataListener(this));
-
-        new UpdateChecker(this).getVersion(version -> {
-            DefaultArtifactVersion currentVersion = new DefaultArtifactVersion(this.getDescription().getVersion());
-            DefaultArtifactVersion mostRecentVersion = new DefaultArtifactVersion(version);
-            if (!(currentVersion.compareTo(mostRecentVersion) > 0 || currentVersion.equals(mostRecentVersion))) {
-                this.outdated = true;
-                this.getScheduler().runTimer(() -> {
-                    this.getLogger().info("&c " + this.pluginName + " is out of date! (Version " + this.getDescription().getVersion() + ")");
-                    this.getLogger().info("&cThe newest version is &f" + version);
-                    this.getLogger().info("&cDownload the new version!");
-                }, 0, 864000);
-            }
-        });
-
-        new Metrics(this, this.bStatsId);
 
         Set<String> enabledPlugins = Arrays.stream(Bukkit.getPluginManager().getPlugins()).map(Plugin::getName).collect(Collectors.toSet());
 

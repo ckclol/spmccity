@@ -1,14 +1,9 @@
-package org.V1_14_R1;
-
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
+package org.caveandcliff;
 
 import org.api.CustomEnchantment;
 import org.api.EnchantRegister;
 import org.api.ResponseManager;
 import org.api.TagWrapper;
-import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -17,19 +12,23 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Implemenation implements TagWrapper{
 	
 	final JavaPlugin plugin;
 	private final NamespacedKey enchListKey;
 	private final NamespacedKey glowKey;
 	private final ResponseManager responseManager = ResponseManager.getInstance();
-	private final GlowEffect glow;
+	private final org.caveandcliff.GlowEffect glow;
 	
 	public Implemenation(JavaPlugin plugin) {
 		this.plugin = plugin;
 		enchListKey = new NamespacedKey(plugin, "EnchanterEnchList");
 		glowKey = new NamespacedKey(plugin, "Glow");
-		glow = new GlowEffect(glowKey);
+		glow = new org.caveandcliff.GlowEffect(glowKey);
 		
 		try {
 			Field f = Enchantment.class.getDeclaredField("acceptingNew");
@@ -40,7 +39,7 @@ public class Implemenation implements TagWrapper{
 			e.printStackTrace();
 			}
 		try {
-			GlowEffect glow = new GlowEffect(glowKey);
+			org.caveandcliff.GlowEffect glow = new GlowEffect(glowKey);
 			Enchantment.registerEnchantment(glow);
 			}
 		catch (IllegalArgumentException e){

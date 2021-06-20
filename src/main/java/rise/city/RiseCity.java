@@ -4,8 +4,11 @@ import me.kodysimpson.simpapi.menu.AbstractPlayerMenuUtility;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import org.api.EnchantRegister;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import org.plugin.commands.CommandNode;
+import org.plugin.tagSystem.TagManager;
 import rise.city.cmd.*;
 import rise.city.cmd.ItemMain;
 import rise.city.damage.Damage;
@@ -43,6 +46,10 @@ public final class RiseCity extends JavaPlugin {
         setupPermissions();
         setupChat();
         setupExp();
+        EnchantRegister.setPlugin(plugin);
+
+        //Sets the version interface
+        TagManager.getInstance().createInstance();
     }
 
     @Override
@@ -50,6 +57,7 @@ public final class RiseCity extends JavaPlugin {
         log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), getDescription().getVersion()));
     }
     public void registerCommands() {
+        this.getCommand("cench").setExecutor(new CommandNode());
         this.getCommand("dc").setExecutor(new DoubleCoins());
         this.getCommand("tc").setExecutor(new TripleCoins());
         this.getCommand("ah").setExecutor(new AuctionCommand());

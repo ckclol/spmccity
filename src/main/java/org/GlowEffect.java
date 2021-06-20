@@ -1,4 +1,4 @@
-package org.V1_14_R1;
+package org;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
