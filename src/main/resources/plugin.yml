@@ -2,12 +2,7 @@ name: RiseCity
 version: ${project.version}
 main: rise.city.RiseCity
 api-version: 1.17
-depend: [PlaceholderAPI, Vault]
-softdepend: [PlaceholderAPI, Vault]
-commands:
-  dc:
-  tc:
-  cench:
-  ah:
-  warp:
-  battery:
+depend: [ Vault, PlaceholderAPI, ProtocolLib ]
+softdepend: [ Vault, PlaceholderAPI, ProtocolLib ]
+authors: [ tcfplayzzzzzzzzzz ]
+website: spmc.ml

@@ -22,13 +22,13 @@ public class Implemenation implements TagWrapper{
 	private final NamespacedKey enchListKey;
 	private final NamespacedKey glowKey;
 	private final ResponseManager responseManager = ResponseManager.getInstance();
-	private final org.caveandcliff.GlowEffect glow;
+	private final GlowEffect glow;
 	
 	public Implemenation(JavaPlugin plugin) {
 		this.plugin = plugin;
 		enchListKey = new NamespacedKey(plugin, "EnchanterEnchList");
 		glowKey = new NamespacedKey(plugin, "Glow");
-		glow = new org.caveandcliff.GlowEffect(glowKey);
+		glow = new GlowEffect(glowKey);
 		
 		try {
 			Field f = Enchantment.class.getDeclaredField("acceptingNew");
@@ -39,7 +39,7 @@ public class Implemenation implements TagWrapper{
 			e.printStackTrace();
 			}
 		try {
-			org.caveandcliff.GlowEffect glow = new GlowEffect(glowKey);
+			GlowEffect glow = new GlowEffect(glowKey);
 			Enchantment.registerEnchantment(glow);
 			}
 		catch (IllegalArgumentException e){
