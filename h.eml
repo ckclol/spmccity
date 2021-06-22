@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_8" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="Maven: org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT" scope="PROVIDED"/>
+	<lib name="Maven: commons-lang:commons-lang:2.6" scope="PROVIDED"/>
+	<lib name="Maven: com.google.guava:guava:21.0" scope="PROVIDED"/>
+	<lib name="Maven: com.google.code.gson:gson:2.8.0" scope="PROVIDED"/>
+	<lib name="Maven: net.md-5:bungeecord-chat:1.16-R0.4" scope="PROVIDED"/>
+	<lib name="Maven: org.yaml:snakeyaml:1.28" scope="PROVIDED"/>
+	<levels>
+		<level name="CombatLogX" value="project"/>
+		<level name="lib" value="project"/>
+		<level name="Maven: org.java-websocket:Java-WebSocket:1.5.1" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.7.25" value="project"/>
+		<level name="Maven: org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT" value="project"/>
+		<level name="Maven: commons-lang:commons-lang:2.6" value="project"/>
+		<level name="Maven: com.google.guava:guava:21.0" value="project"/>
+		<level name="Maven: com.google.code.gson:gson:2.8.0" value="project"/>
+		<level name="Maven: net.md-5:bungeecord-chat:1.16-R0.4" value="project"/>
+		<level name="Maven: org.yaml:snakeyaml:1.28" value="project"/>
+		<level name="Maven: org.jetbrains:annotations:21.0.1" value="project"/>
+		<level name="Maven: net.bytebuddy:byte-buddy:1.11.5" value="project"/>
+		<level name="Maven: com.github.JordanOsterberg:JScoreboards:1.0.1-RELEASE" value="project"/>
+		<level name="Maven: com.github.jely2002:StandaloneCrazyAdvancementsAPI:1.13.11" value="project"/>
+		<level name="Maven: io.netty:netty-all:4.1.45.Final" value="project"/>
+		<level name="Maven: com.github.juliarn:npc-lib:2.5-RELEASE" value="project"/>
+		<level name="Maven: org.openjfx:javafx-controls:15.0.1" value="project"/>
+		<level name="Maven: org.openjfx:javafx-controls:win:15.0.1" value="project"/>
+		<level name="Maven: org.openjfx:javafx-graphics:15.0.1" value="project"/>
+		<level name="Maven: org.openjfx:javafx-graphics:win:15.0.1" value="project"/>
+		<level name="Maven: org.openjfx:javafx-base:15.0.1" value="project"/>
+		<level name="Maven: org.openjfx:javafx-base:win:15.0.1" value="project"/>
+		<level name="Maven: xyz.xenondevs:particle:1.6.2" value="project"/>
+		<level name="Maven: com.github.johnnyjayjay:spigot-maps:2.1.1" value="project"/>
+		<level name="Maven: com.madgag:animated-gif-lib:1.4" value="project"/>
+		<level name="Maven: com.github.noonmaru:tap:3.2.8" value="project"/>
+		<level name="Maven: com.github.kangarko:Foundation:5.9.0" value="project"/>
+		<level name="Maven: org.projectlombok:lombok:1.18.20" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:AuthMe:5.6.0-SNAPSHOT-2459" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:CitizensAPI:2.0.27-b758" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:CMI-API:7.6.2.0" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:DiscordSRV:1.22.0" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:EssentialsX:2.19.0-SNAPSHOT-1148" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:Factions:3.3.2" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:FactionsUUID:1.6.9.5-U0.5.17-b237" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:Jobs:4.17.1" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:LandsAPI:5.4.12" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:LWC:2.2.7" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:MassiveCore:3.3.0" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:mcMMO:2.1.157" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:Multiverse-Core:4.2.2" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:NuVotifier:2.7.2" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:PlaceholderAPI:2.10.9" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:ProtocolLib:4.6.1-SNAPSHOT-b499" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:Residence:4.9.3.4" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:SimpleClans:2.15.1" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:StackMob:5.5.3" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:Towny:0.97.0.0" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:TownyChat:0.88" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:Vault:1.7.3" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:WorldEdit:7.3.0-SNAPSHOT-5758" value="project"/>
+		<level name="Maven: org.mineacademy.plugin:WorldGuard:7.0.5-SNAPSHOT-2109" value="project"/>
+		<level name="Maven: com.github.AlbeMiglio.PowerLib:PowerLib:1.1.9" value="project"/>
+	</levels>
+</component>

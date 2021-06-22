@@ -16,8 +16,8 @@
  */
 package com.comphenix.protocol.wrappers;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
+import com.gmail.nossr50.mcmmo.kyori.adventure.text.Component;
+import com.gmail.nossr50.mcmmo.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
 
 /**
  * Utility class for converting between the Adventure API Component and ProtocolLib's wrapper
@@ -38,11 +38,7 @@ public class AdventureComponentConverter {
     		return GsonComponentSerializer.gson().deserialize(wrapper.getJson());
  	}
 
- 	/**
-	 * Converts a {@link Component} into a ProtocolLib wrapper
-	 * @param components Component
-	 * @return ProtocolLib wrapper
-	 */
+
   	public static WrappedChatComponent fromComponent(Component component) {
     		return WrappedChatComponent.fromJson(GsonComponentSerializer.gson().serialize(component));
   	}

@@ -364,6 +364,31 @@ public class PipelineProxy implements ChannelPipeline {
 		return pipeline.writeAndFlush(arg0);
 	}
 
+	@Override
+	public ChannelPromise newPromise() {
+		return null;
+	}
+
+	@Override
+	public ChannelProgressivePromise newProgressivePromise() {
+		return null;
+	}
+
+	@Override
+	public ChannelFuture newSucceededFuture() {
+		return null;
+	}
+
+	@Override
+	public ChannelFuture newFailedFuture(Throwable throwable) {
+		return null;
+	}
+
+	@Override
+	public ChannelPromise voidPromise() {
+		return null;
+	}
+
 	/* Added in Netty 4.1, seem to be unused
 	public ChannelFuture newFailedFuture(Throwable ex) {
 		return pipeline.newFailedFuture(ex);

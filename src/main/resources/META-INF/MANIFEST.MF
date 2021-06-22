@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Main-Class: rise.city.RiseCity
+Class-Path: particle-1.6.2.jar AuthMe-5.6.0-SNAPSHOT-2459.jar Placeholde
+ rAPI-2.10.9.jar WorldGuard-7.0.5-SNAPSHOT-2109.jar Multiverse-Core-4.2.
+ 2.jar CMI-API-7.6.2.0.jar Foundation-5.9.0.jar javafx-graphics-15.0.1-w
+ in.jar mcMMO-2.1.157.jar FactionsUUID-1.6.9.5-U0.5.17-b237.jar Factions
+ -3.3.2.jar byte-buddy-1.11.5.jar javafx-base-15.0.1-win.jar PowerLib-1.
+ 1.9.jar Java-WebSocket-1.5.1.jar slf4j-api-1.7.25.jar JScoreboards-1.0.
+ 1-RELEASE.jar javafx-base-15.0.1.jar NuVotifier-2.7.2.jar SpigotLib.jar
+  VulcanAPI.jar CombatLogX.jar SpartanAPI.jar spigot-1.17.jar aac-api-5.
+ 0.0.jar Newbie Helper.jar SimpAPI-4.1.1.jar javafx-controls-15.0.1.jar 
+ StackMob-5.5.3.jar animated-gif-lib-1.4.jar StandaloneCrazyAdvancements
+ API-1.13.11.jar DiscordSRV-1.22.0.jar javafx-controls-15.0.1-win.jar LW
+ C-2.2.7.jar Residence-4.9.3.4.jar annotations-21.0.1.jar Vault-1.7.3.ja
+ r Jobs-4.17.1.jar SimpleClans-2.15.1.jar MassiveCore-3.3.0.jar netty-al
+ l-4.1.45.Final.jar ProtocolLib-4.6.1-SNAPSHOT-b499.jar LandsAPI-5.4.12.
+ jar javafx-graphics-15.0.1.jar Towny-0.97.0.0.jar WorldEdit-7.3.0-SNAPS
+ HOT-5758.jar tap-3.2.8.jar EssentialsX-2.19.0-SNAPSHOT-1148.jar lombok-
+ 1.18.20.jar TownyChat-0.88.jar spigot-maps-2.1.1.jar CitizensAPI-2.0.27
+ -b758.jar npc-lib-2.5-RELEASE.jar
+
